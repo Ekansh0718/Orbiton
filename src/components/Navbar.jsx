@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import logo from "../assets/logo.png";
 function Navbar() {
   return (
     <motion.nav
@@ -12,7 +12,7 @@ function Navbar() {
     >
       {/* LOGO ONLY */}
       <Link to="/" style={styles.logoWrapper}>
-        <img src="/logo.png" alt="Orbiton" style={styles.logo} />
+        <img src={logo} alt="Orbiton" style={styles.logo} />
       </Link>
 
       {/* NAV LINKS */}
