@@ -50,7 +50,7 @@ export default function Home() {
           </div>
 
           <p className="mt-10 text-sm text-slate-500">
-            Trusted by 10,000+ students across 50+ universities
+            A growing student's productivity platform
           </p>
         </div>
       </section>

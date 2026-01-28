@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Tools from "./pages/Tools";
 import Prompts from "./pages/Prompts";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/tools" element={<Tools />} />
           <Route path="/prompts" element={<Prompts />} />
         </Routes>
+        <SpeedInsights />
       <Analytics />
     </>
   );
