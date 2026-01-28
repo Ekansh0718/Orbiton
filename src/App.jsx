@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Tools from "./pages/Tools";
@@ -18,7 +18,7 @@ function App() {
           <Route path="/tools" element={<Tools />} />
           <Route path="/prompts" element={<Prompts />} />
         </Routes>
-      
+      <Analytics />
     </>
   );
 }
