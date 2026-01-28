@@ -4,11 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Orbiton</title>
+
+    <!-- ✅ Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYZHB5RFV6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-BYZHB5RFV6");
+    </script>
+    <!-- ✅ End GA4 -->
   </head>
+
   <body>
     <div id="root"></div>
 
-    <!-- THIS LINE IS CRITICAL -->
+    <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
