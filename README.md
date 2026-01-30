@@ -42,11 +42,6 @@ Instead of searching across multiple websites, students can discover, compare, a
 
 ---
 
-## 📸 Screenshots
-> (Add screenshots here once deployed)
-
----
-
 ## ⚙️ Getting Started (Local Setup)
 
 ```bash
