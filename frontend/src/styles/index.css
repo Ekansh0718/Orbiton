@@ -70,3 +70,30 @@
   font-weight: 600;
   color: #2563eb;
 }
+.desktop-only {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: flex;
+  }
+  .mobile-only {
+    display: none;
+  }
+}
+/* GLOBAL OFFSET FOR FIXED NAVBAR */
+body {
+  padding-top: 72px;
+}
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+

@@ -1,51 +1,37 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 function Navbar() {
   return (
     <motion.nav
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       style={styles.nav}
     >
-      <Link to="/" style={styles.logo}>
-        Orbiton
+      {/* LOGO ONLY */}
+      <Link to="/" style={styles.logoWrapper}>
+        <img src="/logo.png" alt="Orbiton" style={styles.logo} />
+
       </Link>
 
+      {/* NAV LINKS */}
       <div style={styles.links}>
-        <NavLink to="/tools">Tools</NavLink>
-        <NavLink to="/prompts">Prompts</NavLink>
+        <NavLink to="/tools" style={styles.link}>
+          Tools
+        </NavLink>
+        <NavLink to="/prompts" style={styles.link}>
+          Prompts
+        </NavLink>
       </div>
 
+      {/* CTA */}
       <Link to="/tools" style={styles.cta}>
-        Get Started
+        Get Started <ArrowRight size={18} />
       </Link>
     </motion.nav>
-  );
-}
-
-function NavItem({ to, children }) {
-  return (
-    <NavLink to={to} style={styles.link}>
-      {({ isActive }) => (
-        <motion.span
-          style={{
-            position: "relative",
-            color: isActive ? "#2563eb" : "#111",
-          }}
-        >
-          {children}
-          {isActive && (
-            <motion.div
-              layoutId="underline"
-              style={styles.underline}
-            />
-          )}
-        </motion.span>
-      )}
-    </NavLink>
   );
 }
 
@@ -55,39 +41,41 @@ const styles = {
     top: 0,
     width: "100%",
     height: "72px",
-    padding: "0 40px",
+    padding: "0 32px",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    background: "rgba(255,255,255)",
     backdropFilter: "blur(12px)",
-    background: "rgba(255,255,255,0.85)",
     borderBottom: "1px solid #eee",
     zIndex: 1000,
   },
-  logo: {
-    fontSize: "20px",
-    fontWeight: 700,
-    textDecoration: "none",
-    color: "#111",
+
+  logoWrapper: {
+    display: "flex",
+    alignItems: "center",
+    height: "100%",
   },
+
+  logo: {
+    height: "35px",       // 👈 perfect website-standard size
+    width:"auto",
+    // display: "block",
+    objectFit: "contain"
+  },
+
   links: {
     display: "flex",
     gap: "32px",
   },
+
   link: {
     textDecoration: "none",
     fontSize: "15px",
     fontWeight: 500,
+    color: "#111",
   },
-  underline: {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    bottom: -6,
-    height: "2px",
-    background: "#2563eb",
-    borderRadius: "2px",
-  },
+
   cta: {
     background: "#2563eb",
     color: "#fff",
